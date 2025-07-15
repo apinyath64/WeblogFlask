@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
+import os
 
 db = SQLAlchemy()
 DB_NAME = "weblog.db"
@@ -9,7 +10,7 @@ DB_NAME = "weblog.db"
 def create_app():
     app = Flask(__name__)
     app.secret_key = "my_secret_123"
-    app.config["SQLALCHEMY_DATABASE_URI"] = f'sqlite:///{DB_NAME}'
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL')
     # initialize database
     db.init_app(app)
 
