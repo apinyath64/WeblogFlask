@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+  Edit Post
+{% endblock title %}
+
+{% block posts %}
+   
+    <!-- post form -->
+    <form method="post" class="w-[500px] rounded-sm mx-auto px-12 mt-8 p-6 bg-white">
+        <div class="mb-5">
+            <textarea name="content" id="content"
+                class="bg-gray-50 border border-gray-300 text-sm rounded focus:ring-gray-300 focus:border-gray-300 block w-full p-4"
+                placeholder="เขียนข้อความ...">{{post.content}}
+            </textarea>
+        </div>
+        <button type="submit"
+            class="flex justify-end items-end text-white bg-[#F37199] focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded text-sm w-full sm:w-auto p-2.5 px-4 hover:p-3 hover:px-6 text-center">แก้ไข</button>
+    </form>
+
+{% endblock posts %}

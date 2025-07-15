@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Welcome to Weblog</title>
+</head>
+<body>
+    <div class="min-h-screen flex items-center justify-center bg-[#f3e8eb] text-[#602626]">
+        <div class="text-center">
+            <h1 class="text-3xl font-bold mb-6">ยินดีต้อนรับสู่ <span class="text-4xl">Weblog</span></h1>
+            <h3 class="mb-8">สมุดบันทึกออนไลน์ที่คุณสามารถแชร์เรื่องราวในชีวิตประจำวันได้</h3>
+            <a href="{{ url_for('auth.login') }}" class="bg-[#602626] text-[#f3e8eb] p-2.5 px-6 rounded hover:p-3 hover:px-8">เริ่มต้น</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+Sign In
+{% endblock title %}
+
+{% block posts %}
+<div class="min-h-screen flex items-center justify-center flex-col">
+    <h1 class="text-2xl">เข้าสู่ระบบบัญชีของคุณ</h1>
+    <form method="post" class="w-[500px] rounded-sm mx-auto px-12 mt-8 p-6 bg-white">
+        <div class="mb-5">
+            <label for="username" class="block mb-2 text-sm font-medium">ชื่อผู้ใช้</label>
+            <input type="text" name="username"
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                placeholder="" required />
+        </div>
+        <div class="mb-5">
+            <label for="password" class="block mb-2 text-sm font-medium">รหัสผ่าน</label>
+            <input type="password" name="password"
+                class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                required />
+        </div>
+        
+        <div class="flex items-center justify-center flex-col">
+            <button type="submit"
+                class="text-white bg-[#F37199] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto 
+                p-2.5 px-6 rounded text-center">
+                เข้าสู่ระบบ
+            </button>
+            <p class="text-gray-500 text-sm mt-4">คุณยังไม่มีบัญชี? 
+                <a href="{{ url_for('auth.register_user') }}" class="text-blue-600 hover:underline">คลิกเพื่อสมัคร</a>
+            </p>
+        </div>
+        
+    </form>
+
+</div>
+{% endblock posts %}
