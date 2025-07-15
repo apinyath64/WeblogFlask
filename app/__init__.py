@@ -3,7 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 db = SQLAlchemy()
 DB_NAME = "weblog.db"
 
