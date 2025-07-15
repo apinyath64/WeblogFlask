@@ -4,6 +4,7 @@ from os import path
 from flask_login import LoginManager
 import os
 from dotenv import load_dotenv
+from flask_migrate import Migrate
 
 load_dotenv()
 db = SQLAlchemy()
@@ -15,6 +16,8 @@ def create_app():
     app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL", f"sqlite:///{DB_NAME}")
     # initialize database
     db.init_app(app)
+
+    migrate = Migrate(app, db)
 
     from .views import views
     from .auth import auth
